@@ -1,0 +1,26 @@
+Algunas indicaciones para realizar la siguiente evaluación técnica:
+
+
+Tiene la libertad de elegir el/los lenguajes de programación que considere convenientes
+La aplicación puede ser tipo:
+Consola
+Escritorio
+Web
+Móvil
+Puede elegir los frameworks, orms y gestores de bases de datos que considere
+Nos interesa el buen balance entre funcionalidad e interfaz visual con preferencia a que funcione todo lo que se pide.
+El código debe ser de su autoría. 
+No se permiten Herramientas preconfiguradas que generen el crud por usted: algunas son entity framework, ZK, Vaandin, etc. Se espera que utilice lógica de programación y conozca que hizo en cada paso, no solo copiar y pegar código sin saber que hace o como lo hace. 
+
+Descripción:
+
+Se requiere una solución para la administración datos de un colegio, es decir que se necesitan operaciones CRUD (crear, leer, actualizar y eliminar) para las entidades de:
+
+● Alumno: Id, Nombre, Apellidos, Género, Fecha Nacimiento
+● Profesor: Id, Nombre Apellidos, Género
+● Grado: Id, Nombre, ProfesorId
+● AlumnoGrado: Id, AlumnoId, GradoId, Sección.
+
+El sistema debe proveer operaciones CRUD para cada entidad.
+
+Cuando termine el CRUD empáquela en un archivo .zip y súbalo en esta plataforma, de igual manera conserve una copia. También debe responder las preguntas en este prueba.
