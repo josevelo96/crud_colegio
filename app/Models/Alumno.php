@@ -18,4 +18,27 @@ class Alumno extends Model
         'genero',
         'fecha_nacimiento',
     ];
+
+    /** -----------------------------------
+     * Eloquent Relationships.
+     * ------------------------------------ */
+    
+    public function alumnos_grados()
+    {
+        return $this->hasMany(AlumnoGrado::class);
+    }
+
+    /** -----------------------------------
+     * Profesor helper methods.
+     * ------------------------------------ */
+    
+    public function nombreCompleto($reversed = false)
+    {
+        return $reversed ? "{$this->apellidos} {$this->nombre}" : "{$this->nombre} {$this->apellidos}";
+    }
+
+    public function nacimiento($format = 'd/m/Y')
+    {
+        return \Carbon\Carbon::parse($this->fecha_nacimiento)->format($format);
+    }
 }

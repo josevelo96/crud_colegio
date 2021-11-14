@@ -18,8 +18,21 @@ class Profesor extends Model
         'genero',
     ];
 
+    /** -----------------------------------
+     * Eloquent Relationships.
+     * ------------------------------------ */
+    
     public function grados()
     {
         return $this->hasMany(Grado::class);
+    }
+
+    /** -----------------------------------
+     * Profesor helper methods.
+     * ------------------------------------ */
+
+    public function nombreCompleto($reversed = false)
+    {
+        return $reversed ? "{$this->apellidos} {$this->nombre}" : "{$this->nombre} {$this->apellidos}";
     }
 }

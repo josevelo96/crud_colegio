@@ -17,6 +17,10 @@ class Grado extends Model
         'nombre',
     ];
 
+    /** -----------------------------------
+     * Eloquent Relationships.
+     * ------------------------------------ */
+    
     public function profesor()
     {
         return $this->belongsTo(Profesor::class);
