@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::redirect('/', 'profesores');
+
+Route::resource('profesores', Controllers\ProfesorController::class)->parameters([
+    'profesores' => 'profesor'
+]);
+Route::get('/alumnos/{alumno}/agregar_clase', [Controllers\AlumnoController::class, 'agregar_clase'])->name('alumnos.agregar_clase');
+Route::get('/alumnos/{alumno}/clases', [Controllers\AlumnoController::class, 'clases'])->name('alumnos.clases');
+Route::resource('alumnos', Controllers\AlumnoController::class);
+Route::resource('grados', Controllers\GradoController::class);
+Route::resource('clases', Controllers\AlumnoGradoController::class)->parameters([
+    'clases' => 'alumno_grado'
+]);
